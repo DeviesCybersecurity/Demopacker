@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
 	"os"
 	"os/exec"
 	"strings"
@@ -41,12 +40,12 @@ func generateDockerfile(config Config) {
 	// set the working directory to /app
 	dockerfileContent.WriteString("WORKDIR /app\n")
 
-	ioutil.WriteFile("Dockerfile", []byte(dockerfileContent.String()), 0644)
+	os.WriteFile("Dockerfile", []byte(dockerfileContent.String()), 0644)
 }
 
 func main() {
 	// Read the YAML file
-	data, err := ioutil.ReadFile("config.yaml")
+	data, err := os.ReadFile("config.yaml")
 	if err != nil {
 		panic(err)
 	}
