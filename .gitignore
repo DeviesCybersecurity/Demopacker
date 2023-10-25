@@ -1,0 +1,10 @@
+# The Dockerfile is generated - Ignore it for this project.
+Dockerfile
+
+# Swap files
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*.swp
+
+# Others
+.DS_Store
